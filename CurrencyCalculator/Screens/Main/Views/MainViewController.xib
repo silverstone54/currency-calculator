@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="CurrencyCalculator" customModuleProvider="target">
+            <connections>
+                <outlet property="currencyLabel" destination="u88-Wh-3Na" id="4jY-pm-oxG"/>
+                <outlet property="pairsSwitch" destination="2ca-iW-zTt" id="sgG-rP-8uj"/>
+                <outlet property="resultLabel" destination="SGt-bQ-V7V" id="Ha3-b9-zmi"/>
+                <outlet property="textField" destination="lbJ-xf-Md5" id="iO3-Qy-uez"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lbJ-xf-Md5" customClass="CurrencyTextField" customModule="CurrencyCalculator" customModuleProvider="target">
+                    <rect key="frame" x="16" y="94" width="382" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u88-Wh-3Na">
+                    <rect key="frame" x="16" y="148" width="70" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ca-iW-zTt">
+                    <rect key="frame" x="349" y="143" width="51" height="31"/>
+                    <connections>
+                        <action selector="switchValueChanged:" destination="-1" eventType="valueChanged" id="DPh-gi-cnc"/>
+                    </connections>
+                </switch>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGt-bQ-V7V">
+                    <rect key="frame" x="393.5" y="204" width="4.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2b-7s-O0i">
+                    <rect key="frame" x="16" y="199" width="64" height="30"/>
+                    <state key="normal" title="Calculate"/>
+                    <connections>
+                        <action selector="calculateAction:" destination="-1" eventType="touchUpInside" id="cn4-sN-jRq"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ee-7g-Fh5">
+                    <rect key="frame" x="153" y="259" width="108" height="30"/>
+                    <state key="normal" title="Select currency"/>
+                    <connections>
+                        <action selector="selectCurrencyAction:" destination="-1" eventType="touchUpInside" id="Pu5-EN-dYZ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="w2b-7s-O0i" firstAttribute="top" secondItem="lbJ-xf-Md5" secondAttribute="bottom" constant="71" id="1OZ-Z3-4Nj"/>
+                <constraint firstItem="1ee-7g-Fh5" firstAttribute="top" secondItem="w2b-7s-O0i" secondAttribute="bottom" constant="30" id="Hxa-Ck-Hb7"/>
+                <constraint firstItem="u88-Wh-3Na" firstAttribute="top" secondItem="lbJ-xf-Md5" secondAttribute="bottom" constant="20" id="KLf-16-img"/>
+                <constraint firstItem="u88-Wh-3Na" firstAttribute="leading" secondItem="lbJ-xf-Md5" secondAttribute="leading" id="QgA-lF-i5V"/>
+                <constraint firstItem="2ca-iW-zTt" firstAttribute="centerY" secondItem="u88-Wh-3Na" secondAttribute="centerY" id="Qoh-W3-epy"/>
+                <constraint firstItem="1ee-7g-Fh5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SlD-Rg-mu4"/>
+                <constraint firstItem="SGt-bQ-V7V" firstAttribute="centerY" secondItem="w2b-7s-O0i" secondAttribute="centerY" id="W8K-IX-Lp8"/>
+                <constraint firstItem="SGt-bQ-V7V" firstAttribute="trailing" secondItem="lbJ-xf-Md5" secondAttribute="trailing" id="YE4-3r-r6U"/>
+                <constraint firstItem="2ca-iW-zTt" firstAttribute="trailing" secondItem="lbJ-xf-Md5" secondAttribute="trailing" id="bbD-Rx-Kee"/>
+                <constraint firstItem="lbJ-xf-Md5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="cWX-bd-41U"/>
+                <constraint firstItem="lbJ-xf-Md5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="jha-Qw-odg"/>
+                <constraint firstItem="lbJ-xf-Md5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="k08-NR-7zu"/>
+                <constraint firstItem="w2b-7s-O0i" firstAttribute="leading" secondItem="lbJ-xf-Md5" secondAttribute="leading" id="lmR-ar-pKB"/>
+            </constraints>
+            <point key="canvasLocation" x="140.57971014492756" y="145.98214285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
